@@ -232,6 +232,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhuxiuxiu66">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhuxiuxiu66">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/02/闭包/" itemprop="url">闭包</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T11:42:08+08:00">
+                2018-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><h4 id="能够访问另一个函数作用域内变量的函数，也可以简单理解为“定义在一个函数内部的函数”。"><a href="#能够访问另一个函数作用域内变量的函数，也可以简单理解为“定义在一个函数内部的函数”。" class="headerlink" title="能够访问另一个函数作用域内变量的函数，也可以简单理解为“定义在一个函数内部的函数”。"></a>能够访问另一个函数作用域内变量的函数，也可以简单理解为“定义在一个函数内部的函数”。</h4><pre><code>function a() {
+    var n = 0;
+    function b() {
+        n++;
+        console.log(n);
+    }
+    return b;
+}
+var c = a();
+c();    // 输出1
+c();    // 输出2
+</code></pre><p>这段代码中b函数访问了构造函数a里面的变量n，形成了一个闭包。</p>
+<p>▲注意： 函数名只是一个<strong>标识（指向函数的指针）</strong>，而函数名()才是<strong>执行函数</strong>。</p>
+<h4 id="闭包的优缺点："><a href="#闭包的优缺点：" class="headerlink" title="闭包的优缺点："></a>闭包的优缺点：</h4><p>（1）闭包就是一个函数引用另外一个函数的变量，因为变量被引用着所以不会被回收，因此可以用来封装一个私有变量。<br>（2）闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题。===&gt;解决方法是：在退出函数之前，将不使用的局部变量全部删除。<br>（3）闭包会在父函数外部，改变父函数内部变量的值，所以如果把父函数当作对象Object使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有变量（Private value），此时，不要随意改变父函数内部变量的值。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/js数组方法汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -608,7 +741,7 @@ console.log(sum); //25
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
