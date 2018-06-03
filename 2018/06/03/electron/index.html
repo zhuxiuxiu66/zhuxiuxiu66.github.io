@@ -86,12 +86,12 @@
 <meta property="og:site_name" content="zhuxiuxiu66">
 <meta property="og:description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/electron/uploads/electron进程关系.png">
-<meta property="og:updated_time" content="2018-06-03T08:26:00.668Z">
+<meta property="og:image" content="http://yoursite.com/img/electron进程关系.png">
+<meta property="og:updated_time" content="2018-06-03T08:29:58.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="electron">
 <meta name="twitter:description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/03/electron/uploads/electron进程关系.png">
+<meta name="twitter:image" content="http://yoursite.com/img/electron进程关系.png">
 
 
 
@@ -319,7 +319,7 @@
 <h4 id="主进程与渲染进程的区别"><a href="#主进程与渲染进程的区别" class="headerlink" title="主进程与渲染进程的区别"></a>主进程与渲染进程的区别</h4><p>主进程使用 <strong>BrowserWindow 实例创建网页</strong>。每个 BrowserWindow 实例都在自己的渲染进程里运行着一个网页。当一个 BrowserWindow 实例被销毁后，相应的渲染进程也会被终止。</p>
 <p>主进程管理所有页面和与之对应的渲染进程。每个渲染进程都是相互独立的，并且只关心他们自己的网页。</p>
 <p>在 Electron，我们提供用于在主进程与渲染进程之间通讯的 ipc 模块。并且也有一个远程进程调用风格的通讯模块 remote。</p>
-<p><img src=".\uploads\electron进程关系.png" alt=""></p>
+<p><img src="\img\electron进程关系.png" alt=""></p>
 <h4 id="打造第一个Electron应用"><a href="#打造第一个Electron应用" class="headerlink" title="打造第一个Electron应用"></a>打造第一个Electron应用</h4>
       
     </div>
