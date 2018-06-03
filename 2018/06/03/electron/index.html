@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/electron进程关系.png">
 <meta property="og:image" content="http://yoursite.com/img/myElectron应用.png">
-<meta property="og:updated_time" content="2018-06-03T14:41:23.906Z">
+<meta property="og:updated_time" content="2018-06-03T14:53:21.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="electron">
 <meta name="twitter:description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。">
@@ -422,12 +422,38 @@ app.on(&apos;activate&apos;, () =&gt; {
 <p>打开命令行，可以这样使用它：</p>
 <pre><code>electron-packager . myElectron --win --out ../myElectronApp --arch=x64 --version=0.0.1
 </code></pre><p>它的使用格式如下：</p>
-<pre><code>electron-packager &lt;应用目录&gt; &lt;应用名称&gt; &lt;打包平台&gt; --out &lt;输出目录&gt; &lt;架构&gt; &lt;应用版本&gt;
+<pre><code>electron-packager &lt;sourcedir&gt; &lt;appname&gt; --platform=&lt;platform&gt; --arch=&lt;arch&gt; [optional flags...]
+</code></pre><ul>
+<li><p><code>&lt;sourcedir&gt;</code>： 项目的位置</p>
+</li>
+<li><p><code>&lt;appname&gt;</code>： 应用名</p>
+</li>
+<li><p>–platform=<platform>： 打包的系统(darwin、win32、linux)</platform></p>
+</li>
+<li><p>–arch=<arch>： 系统位数(ia32、x64)</arch></p>
+</li>
+<li><p>–icon=<icon>： 指定应用的图标(Mac 为 .icns 文件，Windows 为 .ico 或 .png)</icon></p>
+</li>
+<li><p>–out <out>： 指定输出的目录</out></p>
+</li>
+<li><p>–version=<version>： 指定编译的 electron-prebuilt 版本</version></p>
+</li>
+</ul>
+<p>例如：</p>
+<pre><code>electron-packager ./ WeFlow --platform=darwin --arch=x64 --icon=./assets/img/WeFlow.icns --overwrite --out ./dist --version=0.37.8
 </code></pre><p>但是，这样进行打包会报出一个提示：</p>
 <pre><code>Unable to determine Electron version. Please specify an Electron version
 </code></pre><p>提示告诉我们，需要指明 Electron version。这个参数是当前安装Electron的版本，不知道的可以直接electron就能看到了，我这里是2.0.2，经过改进后如下：</p>
 <pre><code>electron-packager . myElectron --win --out ../myElectronApp --arch=x64 --electron-version=2.0.2
+</code></pre><p>我们也可以直接在 package.json 的 script 字段中添加脚本，如下：</p>
+<pre><code>&quot;scripts&quot;: {
+    &quot;build:all&quot;: &quot;electron-packager . --all --overwrite&quot;,
+    &quot;build:mac&quot;: &quot;electron-packager ./ WeFlow --platform=darwin --arch=x64 --icon=./assets/img/WeFlow.icns --overwrite --out ./dist --version=0.37.8&quot;,
+    &quot;build:win64&quot;: &quot;electron-packager ./ WeFlow --platform=win32 --arch=x64 --icon=./assets/img/WeFlow.png --overwrite --out ./dist --version=0.37.8&quot;,
+    &quot;build:win32&quot;: &quot;electron-packager ./ WeFlow --platform=win32 --arch=ia32 --icon=./assets/img/WeFlow.png --overwrite --out ./dist --version=0.37.8 --app-version=1.0.0&quot;
+}
 </code></pre><p>执行完毕后，就可以看到父级目录下已经产生了我们希望看到的应用文件夹。</p>
+<p><strong>注意：</strong> electron-packager 打包后的文件可以看到源代码，想更进一步打包可以用 <a href="https://github.com/electron-userland/electron-builder/" title=" electron-builder" target="_blank" rel="noopener">electron-builder</a> 。</p>
 <p>最后，文章参考 <a href="https://www.2cto.com/kf/201710/688022.html" title="electron入门教你如何创建第一个electron应用并进行打包" target="_blank" rel="noopener">electron入门教你如何创建第一个electron应用并进行打包</a></p>
 
       
