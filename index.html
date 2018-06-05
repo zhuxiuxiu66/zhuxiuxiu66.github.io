@@ -242,6 +242,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/06/call()与apply()方法区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhuxiuxiu66">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陌盍の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/06/call()与apply()方法区别/" itemprop="url">call() & apply()方法区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-06T00:14:18+08:00">
+                2018-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="基本作用"><a href="#基本作用" class="headerlink" title="基本作用"></a>基本作用</h2><p>都能<strong>改变对象的执行上下文，将一个对象的方法交给另一个对象来立即执行</strong>。执行上下文（执行环境）也就是方法中this的指向。</p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>1、call()：</p>
+<pre><code>function.call(obj[, arg1[, arg2[, [, .argN]]]]])
+</code></pre><ul>
+<li>调用 call() 的对象必须是个函数function</li>
+<li>call() 的第一个参数将会是function改变上下文后指向的对象，如果不穿，将会默认是全局对象 window</li>
+<li>第二个参数开始可以接收任意个参数，这些参数将会作为function的参数传入function</li>
+<li>调用 call() 的方法会立即执行</li>
+</ul>
+<p>2、apply():</p>
+<pre><code>function.apply(obj[, argArray])
+</code></pre><p>与 call 方法的使用基本一致，但是只接收两个参数，其中第二个参数必须是一个数组或者类数组。</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p><code>call</code> 方法从第二个参数开始可以接收任意个参数，每个参数会映射到相应位置的 <code>fn</code> 的参数上，可以通过参数名调用，但是如果将所有的参数作为数组传入，他们会作为一个整体映射到 <code>fn</code> 对应的第一个参数上，之后参数都为空。</p>
+<pre><code>function fn(a,b,c) {}
+fn.call(obj, 1, 2, 3)   // function接收到的参数实际上是1，2，3
+fn.call(obj, [1,2,3])  // function接收到的参数实际上是 [1,2,3],undefined,undefined
+</code></pre><p><code>apply</code> 方法最多只有两个参数，第二个参数接收数组或者类数组，但是都会被转换成类数组传入 <code>fn</code> 中，并会被映射到 <code>fn</code> 对应的参数上。</p>
+<pre><code>fn.apply(obj, [1,2,3]);  // function接收到的参数实际上是1，2，3
+fn.apply(obj, {
+    0: 1,
+    1: 2,
+    2: 3,
+    length: 3
+})
+// function接收到的参数实际上是1，2，3
+</code></pre><h2 id="两个方法的选择使用"><a href="#两个方法的选择使用" class="headerlink" title="两个方法的选择使用"></a>两个方法的选择使用</h2><p>可以根据要传入的参数来做选择，不需要传参或者只有1个参数的时候，用 <code>call</code>，当要传入多个对象时，用 <code>apply</code></p>
+<h2 id="两个方法的用途————对象继承"><a href="#两个方法的用途————对象继承" class="headerlink" title="两个方法的用途————对象继承"></a>两个方法的用途————对象继承</h2><p>由于可以改变 <code>this</code> 的指向，所以可以实现对象的继承。</p>
+<pre><code>function superClass() {
+    this.a = 1;
+    this.print = function () {
+        console.log(this.a);
+    }
+}
+
+function subClass () {
+    superClass.call(this);
+    this.print();
+}
+subClass();   // 打印1
+</code></pre><p><code>subClass</code> 通过 <code>call</code> 方法，继承了 <code>superClass</code> 的 <code>print</code> 方法和 <code>a</code> 变量，同时 <code>subClass</code> 还可以扩展自己的其他方法。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/js原型与原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -601,133 +760,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/js数组方法汇总/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhuxiuxiu66">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陌盍の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/20/js数组方法汇总/" itemprop="url">js数组方法汇总</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T18:32:20+08:00">
-                2018-05-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h1><h4 id="1、-使用Array构造函数"><a href="#1、-使用Array构造函数" class="headerlink" title="1、 使用Array构造函数"></a>1、 使用Array构造函数</h4><pre><code>var arr1 = new Array();   // 创建一个空数组
-var arr2 = new Array(10); // 创建一个包含10项的数组  [empty × 10]
-var arr3 = new Array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);  // 创建一个包含3个字符串的数组
-</code></pre>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/20/js数组方法汇总/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -782,7 +814,7 @@ var arr3 = new Array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);  // 创建一
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
