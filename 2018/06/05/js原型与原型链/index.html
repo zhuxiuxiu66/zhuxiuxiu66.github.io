@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="陌盍の博客">
 <meta property="og:description" content="一、理解并区分“普通对象与函数对象”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-05T13:52:34.121Z">
+<meta property="og:updated_time" content="2018-06-05T13:58:18.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js原型与原型链.md">
 <meta name="twitter:description" content="一、理解并区分“普通对象与函数对象”">
@@ -372,7 +372,7 @@ person1.sayHello();   // &apos;Hello Lily&apos;
 person1.constructor == Person
 Person.prototype.constructor == Person
 同时，原型对象（Person.prototype）是构造函数（Person）的一个实例。
-</code></pre><h2 id="五、proto"><a href="#五、proto" class="headerlink" title="五、proto"></a>五、<strong>proto</strong></h2><p>js在创建对象时，都有一个叫做 <code>__proto__</code> 的内置属性，用于指向创建它的构造函数的原型对象。</p>
+</code></pre><h2 id="五、-proto"><a href="#五、-proto" class="headerlink" title="五、 proto"></a>五、<strong> proto</strong></h2><p>js在创建对象时，都有一个叫做 <code>__proto__</code> 的内置属性，用于指向创建它的构造函数的原型对象。</p>
 <p>对象 <code>person1</code> 有一个 <code>__proto__</code> 属性，创建它的构造函数是 <code>Person</code>，构造函数的原型对象是 <code>Person.prototype</code>。</p>
 <pre><code>Person.prototype.constructor == Person;
 person1.__proto__ == Person.prototype;
@@ -533,7 +533,7 @@ Object.prototype.__proto__ = null;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、理解并区分“普通对象与函数对象”"><span class="nav-number">1.</span> <span class="nav-text">一、理解并区分“普通对象与函数对象”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、构造函数"><span class="nav-number">2.</span> <span class="nav-text">二、构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、原型继承"><span class="nav-number">3.</span> <span class="nav-text">三、原型继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、原型对象"><span class="nav-number">4.</span> <span class="nav-text">四、原型对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、proto"><span class="nav-number">5.</span> <span class="nav-text">五、proto</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、原型链-与-作用域链"><span class="nav-number">6.</span> <span class="nav-text">六、原型链 与 作用域链</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、理解并区分“普通对象与函数对象”"><span class="nav-number">1.</span> <span class="nav-text">一、理解并区分“普通对象与函数对象”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、构造函数"><span class="nav-number">2.</span> <span class="nav-text">二、构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、原型继承"><span class="nav-number">3.</span> <span class="nav-text">三、原型继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、原型对象"><span class="nav-number">4.</span> <span class="nav-text">四、原型对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、-proto"><span class="nav-number">5.</span> <span class="nav-text">五、 proto</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、原型链-与-作用域链"><span class="nav-number">6.</span> <span class="nav-text">六、原型链 与 作用域链</span></a></li></ol></div>
             
 
           </div>
