@@ -319,7 +319,14 @@
 &lt;/div&gt;
 </code></pre><p>上述代码得到的是：</p>
 <p><img src="\img\margin值设置.png" alt="margin值设置"></p>
-<p>总结： margin 值</p>
+<p>总结：</p>
+<ul>
+<li>在内层div上设置 margin 值，<code>margin-top</code> 值会“转移”给外层div。</li>
+<li>原因分析：这是因为盒子没有获得 <code>haslayout</code> 。</li>
+<li>解决方案：给<strong>外边的盒子</strong>设置一个 <code>border(不为 none)</code> 或者 <code>padding(不为 0)</code> 或者 <code>overflow：hidden</code> 即可，这个叫做<strong>空白边叠加</strong>。设置之后，即可得到如下图所示效果：</li>
+</ul>
+<p><img src="\img\生效的margin.png" alt="生效的margin"></p>
+<p>思考：<code>haslayout</code> 是什么？为什么没有获得 haslayout 会造成 <code>margin-top</code> <strong>失效转移</strong>？</p>
 <h2 id="JS-类"><a href="#JS-类" class="headerlink" title="JS 类"></a>JS 类</h2><p>1.数据类型：</p>
 <pre><code>console.log(&apos;0&apos; == false);   // true 隐式转换相等，都为0
 console.log(&apos;0&apos; === false);  // false  数据类型不同
