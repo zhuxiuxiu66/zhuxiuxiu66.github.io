@@ -312,54 +312,14 @@
 
       
         
-          
-            <a id="more"></a>    
-<h2 id="HTML-类"><a href="#HTML-类" class="headerlink" title="HTML 类"></a>HTML 类</h2><p>1.为标签设置 <code>margin</code> 值：</p>
-<pre><code>&lt;div style=&quot;width: 200px; height: 200px; background: red;&quot;&gt;
-    &lt;div style=&quot;background: blue;width: 100px; height: 100px; margin: 10px;&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>上述代码得到的是：</p>
-<p><img src="\img\margin值设置.png" alt="margin值设置"></p>
-<p>总结：</p>
-<ul>
-<li>在内层div上设置 margin 值，<code>margin-top</code> 值会“转移”给外层div。</li>
-<li>原因分析：这是因为盒子没有获得 <code>haslayout</code> 。</li>
-<li>解决方案：给<strong>外边的盒子</strong>设置一个 <code>border(不为 none)</code> 或者 <code>padding(不为 0)</code> 或者 <code>overflow：hidden</code> 即可，这个叫做<strong>空白边叠加</strong>。设置之后，即可得到如下图所示效果：</li>
-</ul>
-<p><img src="\img\生效的margin.png" alt="生效的margin"></p>
-<p>思考：<code>haslayout</code> 是什么？为什么没有获得 haslayout 会造成 <code>margin-top</code> <strong>失效转移</strong>？</p>
-<h2 id="JS-类"><a href="#JS-类" class="headerlink" title="JS 类"></a>JS 类</h2><p>1.数据类型：</p>
-<pre><code>console.log(&apos;0&apos; == false);   // true 隐式转换相等，都为0
-console.log(&apos;0&apos; === false);  // false  数据类型不同
-console.log(0 == false);    // true  隐式转换相等，都是0
-console.log(0 === false);    // false  数据类型不同
-console.log(null == undefined);  // true  undefined值是派生自null值的
-console.log(null === undefined);  // false 数据类型不同
-</code></pre><p>总结：</p>
-<ul>
-<li><p><strong>数据类型</strong>的种类：</p>
-<p>  （1）数值型：Number、String、Boolean、Null、Undefined</p>
-<p>  （2）引用型或复杂性：Object、Array</p>
-</li>
-<li><p>js中 <strong>===</strong> 和 <strong>==</strong> 的区别：</p>
-<p>  （1）== 用于比较判断两者相等，会自动转化数据类型，只要求值相等</p>
-<p>  （2）=== 用于严格比较，判断两者严格相等，要求值和类型都相等</p>
-</li>
-</ul>
-<p>2.立即执行函数：</p>
-<pre><code>var a = &apos;Hello&apos;;
-(function() {
-    var b = &apos;Json&apos;;
-    console.log(a + &apos; &apos; + b);    // 打印 Hello Json
-})()
-console.log(a + &apos; &apos; + b);   // error:b is not defined
-</code></pre><p>总结： </p>
-<ul>
-<li></li>
-</ul>
-<p>3.promise</p>
-
-          
+          <h2 id="HTML-类"><a href="#HTML-类" class="headerlink" title="HTML 类"></a>HTML 类</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/07/前端面试基础题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
