@@ -345,6 +345,18 @@ console.log(null === undefined);  // false 数据类型不同
 <p>  （2）=== 用于严格比较，判断两者严格相等，要求值和类型都相等</p>
 </li>
 </ul>
+<p>2.立即执行函数：</p>
+<pre><code>var a = &apos;Hello&apos;;
+(function() {
+    var b = &apos;Json&apos;;
+    console.log(a + &apos; &apos; + b);    // 打印 Hello Json
+})()
+console.log(a + &apos; &apos; + b);   // error:b is not defined
+</code></pre><p>总结： </p>
+<ul>
+<li></li>
+</ul>
+<p>3.promise</p>
 
           
         
@@ -781,7 +793,7 @@ subClass();   // 打印1
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -831,7 +843,7 @@ subClass();   // 打印1
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

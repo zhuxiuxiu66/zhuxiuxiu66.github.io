@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。">
+<meta name="description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。 当用Electron启动一个应用，会创建一个主进程，这个主进程负">
 <meta property="og:type" content="article">
 <meta property="og:title" content="electron">
 <meta property="og:url" content="http://yoursite.com/2018/06/03/electron/index.html">
 <meta property="og:site_name" content="陌盍の博客">
-<meta property="og:description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。">
+<meta property="og:description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。 当用Electron启动一个应用，会创建一个主进程，这个主进程负">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/electron进程关系.png">
 <meta property="og:image" content="http://yoursite.com/img/myElectron应用.png">
-<meta property="og:updated_time" content="2018-06-03T14:53:21.137Z">
+<meta property="og:updated_time" content="2018-08-06T15:01:34.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="electron">
-<meta name="twitter:description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。">
+<meta name="twitter:description" content="Electron概述  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个内含渲染完的web页面的应用窗口，并添加与操作系统的原生GUI（图形界面）交互的功能。 当用Electron启动一个应用，会创建一个主进程，这个主进程负">
 <meta name="twitter:image" content="http://yoursite.com/img/electron进程关系.png">
 
 
@@ -312,8 +312,8 @@
       
 
       
-        <h1 id="Electron概述"><a href="#Electron概述" class="headerlink" title="Electron概述"></a>Electron概述</h1><p>  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个<strong>内含渲染完的web页面的应用窗口</strong>，并添加与操作系统的原生GUI（图形界面）交互的功能。</p>
-<a id="more"></a>    
+        <a id="more"></a>    
+<h1 id="Electron概述"><a href="#Electron概述" class="headerlink" title="Electron概述"></a>Electron概述</h1><p>  简单来说，Electron为用纯JavaScript创建桌面应用提供了运行时。原理是，Electron调用在package.json中定义的main文件并执行它。main文件（通常被命名为main.js）会创建一个<strong>内含渲染完的web页面的应用窗口</strong>，并添加与操作系统的原生GUI（图形界面）交互的功能。</p>
 <p>当<strong>用Electron启动一个应用，会创建一个主进程</strong>，这个主进程负责与系统原生的GUI进行交互并为你的应用创建GUI（在你的应用窗口）。</p>
 <h4 id="主进程"><a href="#主进程" class="headerlink" title="主进程"></a>主进程</h4><p>在Electron里，运行 <code>package.json</code> 里的 <code>main</code> 脚本的进程被称为<strong>主进程</strong>。在主进程运行的脚本可以以创建web页面的形式展示GUI。</p>
 <h4 id="渲染进程"><a href="#渲染进程" class="headerlink" title="渲染进程"></a>渲染进程</h4><p>由于Electron使用Chromium来展示页面，所以Chromium的多进程结构也被充分利用。每个Electron的页面都在运行着自己的进程，这样的进程我们称之为<strong>渲染进程</strong>。</p>
@@ -572,7 +572,7 @@ app.on(&apos;activate&apos;, () =&gt; {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
